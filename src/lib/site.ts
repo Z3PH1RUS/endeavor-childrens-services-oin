@@ -1,3 +1,5 @@
+import type { SiteImageKey } from "./images";
+
 export const siteConfig = {
   name: "Endeavor Children's Services",
   shortName: "Endeavor",
@@ -84,6 +86,7 @@ export const boardMembers = [
   {
     role: "Board Chair",
     name: "Scott Neilson",
+    imageKey: "scottNeilson" as SiteImageKey,
     bio: [
       "Scott received a bachelor's degree in political science from the University of Washington, and received his law degree from Gonzaga University School of Law. From 1973 to 1984, Neilson served as Assistant Attorney General for Washington State. From 1984 to 1993, Neilson worked in private practice. In addition, Neilson served as the sole guardian ad litem for children in foster care in Thurston County.",
       "In 1993, Neilson was appointed Superior Court Commissioner. Since then, he has presided over hundreds of criminal and civil juvenile cases, including dependency (child abuse and neglect), termination of parental rights, youth at risk, children in need of services, and truancy actions.",
@@ -95,6 +98,7 @@ export const boardMembers = [
   {
     role: "Board Member",
     name: "Carolyn Gilman",
+    imageKey: "carolynGilman" as SiteImageKey,
     bio: [
       "Carolyn began her career working in children's television at Seattle's ABC-TV affiliate, winning an Emmy award for writing from the National Academy of Television Arts and Sciences.",
       "She has also worked for 18 years in early childhood education, both as a teacher at the University of Washington's Children's Center and at Pacific First Montessori in downtown Seattle.",
@@ -104,6 +108,7 @@ export const boardMembers = [
   {
     role: "Board Member",
     name: "Laurel Shelton",
+    imageKey: "laurelShelton" as SiteImageKey,
     bio: [
       "Laurel Shelton is a talented artist who, after studying elementary education, has pursued all manner of the arts for a lifetime. A small business owner for 15 years, Laurel worked as a professional seamstress in the field of interior design and historic restoration.",
       "Her volunteer work included public school art instruction, art classes at homes for vulnerable children, and pro bono sewing for the Spokane Historical Society restoration program.",
@@ -118,27 +123,27 @@ export const programAppeals = [
     description:
       "Access to creative arts, therapeutic activities, and a life book to treasure are fundamentals every child should have — yet many vulnerable children lack the psycho-social support they need alongside material aid.",
     href: "/programs",
-    gradient: "from-emerald-700 to-emerald-900",
+    imageKey: "iamwhoMission" as SiteImageKey,
   },
   {
     title: "Food & Nutrition",
     description:
       "Endeavor provides food for hungry children in the communities we serve, addressing immediate nutritional needs as part of a holistic approach to child well-being.",
     href: "/about",
-    gradient: "from-teal-700 to-teal-900",
+    imageKey: "childrenCommunity" as SiteImageKey,
   },
   {
     title: "Health Care Access",
     description:
       "Connecting vulnerable children to health care is essential. Endeavor works to ensure children receive the medical support they need to thrive.",
     href: "/about",
-    gradient: "from-green-800 to-green-950",
+    imageKey: "childrenProgram" as SiteImageKey,
   },
   {
     title: "Education Support",
     description:
       "School access opens doors to the future. Endeavor supports children's education alongside programs that build confidence, hope, and self-esteem.",
     href: "/programs/mission",
-    gradient: "from-lime-800 to-emerald-900",
+    imageKey: "iamwhoMission" as SiteImageKey,
   },
 ] as const;

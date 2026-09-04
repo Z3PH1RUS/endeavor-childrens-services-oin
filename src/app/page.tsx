@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AppealCards } from "@/components/AppealCards";
+import { ContentImage } from "@/components/ContentImage";
 import { CTABand } from "@/components/CTABand";
 import { Hero } from "@/components/Hero";
 import { ImpactStats } from "@/components/ImpactStats";
 import { StoryCards } from "@/components/StoryCards";
+import { siteImages } from "@/lib/images";
 import { impactStats, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -19,6 +21,7 @@ export default function HomePage() {
       <Hero
         title="Changing the world, one child at a time"
         lead="Endeavor Children's Services brings hope and opportunity to orphans and vulnerable children around the world through innovative programs in health, nutrition, education, and psycho-social care."
+        image={{ ...siteImages.homepageBanner, priority: true }}
         primaryCta={{ href: "/programs", label: "Explore Programs" }}
         secondaryCta={{ href: "/about", label: "About Us" }}
       />
@@ -49,6 +52,22 @@ export default function HomePage() {
               improving the lives of children most in need — anywhere in the
               world.
             </p>
+          </div>
+          <div className="mb-8 grid gap-6 md:grid-cols-2">
+            <ContentImage
+              src={siteImages.childrenProgram.src}
+              alt={siteImages.childrenProgram.alt}
+              width={siteImages.childrenProgram.width}
+              height={siteImages.childrenProgram.height}
+              className="h-auto w-full rounded-xl border border-border shadow-sm"
+            />
+            <ContentImage
+              src={siteImages.childrenCommunity.src}
+              alt={siteImages.childrenCommunity.alt}
+              width={siteImages.childrenCommunity.width}
+              height={siteImages.childrenCommunity.height}
+              className="h-auto w-full rounded-xl border border-border shadow-sm"
+            />
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {[

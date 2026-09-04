@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContentImage } from "@/components/ContentImage";
 import { PageHeader } from "@/components/Hero";
 import { StoryCards } from "@/components/StoryCards";
+import { siteImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "I Am Who? Book",
@@ -31,10 +33,20 @@ export default function BookPage() {
           { label: "Programs", href: "/programs" },
           { label: "The Book" },
         ]}
+        image={siteImages.iamwhoBookCover}
       />
 
       <section className="py-14 md:py-16">
         <div className="mx-auto max-w-3xl px-4">
+          <div className="mb-10 flex justify-center md:hidden">
+            <ContentImage
+              src={siteImages.iamwhoBookCover.src}
+              alt={siteImages.iamwhoBookCover.alt}
+              width={siteImages.iamwhoBookCover.width}
+              height={siteImages.iamwhoBookCover.height}
+              className="h-auto w-full max-w-[200px] rounded-xl border border-border shadow-sm"
+            />
+          </div>
           <blockquote className="mb-10 rounded-xl border-l-4 border-accent bg-accent-light p-6 text-lg italic text-text">
             &ldquo;This painting game makes me feel warm in my heart.&rdquo;
           </blockquote>

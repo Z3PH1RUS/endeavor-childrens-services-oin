@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { CTABand } from "@/components/CTABand";
+import { ContentImage } from "@/components/ContentImage";
 import { PageHeader } from "@/components/Hero";
+import { siteImages } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -68,9 +70,11 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-bg-warm py-14 md:py-16">
-        <div className="mx-auto max-w-3xl px-4">
-          <h2>Executive Director — Janice Neilson</h2>
-          <p className="mt-4 text-text-muted">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+            <div>
+              <h2>Executive Director — Janice Neilson</h2>
+              <p className="mt-4 text-text-muted">
             The founding executive director of Endeavor Children&apos;s Services,
             Janice Secord Neilson, draws upon decades of experience in
             international child welfare services.
@@ -147,7 +151,25 @@ export default function AboutPage() {
             Affairs (People&apos;s Republic of China), the Department of Public
             Welfare (Thailand), The Child Welfare League of the Philippines
             (Philippines) and Holt Children&apos;s Services (Korea).
-          </p>
+              </p>
+            </div>
+            <div className="space-y-6">
+              <ContentImage
+                src={siteImages.janiceWithChildren.src}
+                alt={siteImages.janiceWithChildren.alt}
+                width={siteImages.janiceWithChildren.width}
+                height={siteImages.janiceWithChildren.height}
+                className="h-auto w-full rounded-xl border border-border shadow-sm"
+              />
+              <ContentImage
+                src={siteImages.janiceNeilson.src}
+                alt={siteImages.janiceNeilson.alt}
+                width={siteImages.janiceNeilson.width}
+                height={siteImages.janiceNeilson.height}
+                className="h-auto w-full rounded-xl border border-border shadow-sm"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

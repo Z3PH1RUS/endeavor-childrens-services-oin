@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SkipLink } from "@/components/SkipLink";
 import { TopBar } from "@/components/TopBar";
+import { siteImages } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -34,11 +35,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} — Hope for Every Child`,
     description: siteConfig.description,
+    images: [
+      {
+        url: siteImages.homepageBanner.src,
+        width: siteImages.homepageBanner.width,
+        height: siteImages.homepageBanner.height,
+        alt: siteImages.homepageBanner.alt,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
+    images: [siteImages.homepageBanner.src],
   },
   robots: {
     index: true,

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CTABand } from "@/components/CTABand";
+import { ContentImage } from "@/components/ContentImage";
 import { PageHeader } from "@/components/Hero";
 import { QuickDonate } from "@/components/QuickDonate";
+import { siteImages } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -86,7 +88,25 @@ export default function GetInvolvedPage() {
               </ul>
             </div>
 
-            <QuickDonate />
+            <div className="space-y-6">
+              <QuickDonate />
+              <div className="rounded-xl border border-border bg-brand-light p-6">
+                <ContentImage
+                  src={siteImages.logo.src}
+                  alt={siteImages.logo.alt}
+                  width={siteImages.logo.width}
+                  height={siteImages.logo.height}
+                  className="mb-4 h-auto w-full max-w-xs"
+                />
+                <ContentImage
+                  src={siteImages.childrenCommunity.src}
+                  alt={siteImages.childrenCommunity.alt}
+                  width={siteImages.childrenCommunity.width}
+                  height={siteImages.childrenCommunity.height}
+                  className="h-auto w-full rounded-lg border border-border shadow-sm"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

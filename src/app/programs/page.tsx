@@ -3,7 +3,9 @@ import Link from "next/link";
 import { AppealCards } from "@/components/AppealCards";
 import { CTABand } from "@/components/CTABand";
 import { CompactHero } from "@/components/Hero";
+import { ContentImage } from "@/components/ContentImage";
 import { ImpactStats } from "@/components/ImpactStats";
+import { siteImages } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -49,31 +51,51 @@ export default function ProgramsPage() {
 
       <section className="py-14 md:py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-10 max-w-3xl">
-            <h2>Building Confidence, Hope &amp; Self-Esteem</h2>
-            <p className="mt-3 text-text-muted">
-              Endeavor&apos;s main focus is the I Am Who program — building
-              confidence, hope and self-esteem in children with broken hearts.
-              Each child creates their own life book, answering the question:{" "}
-              <em>I Am Who?</em>
-            </p>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {programCards.map((card) => (
-              <article
-                key={card.title}
-                className="rounded-xl border border-border bg-white p-6 shadow-sm"
-              >
-                <h3 className="font-bold">{card.title}</h3>
-                <p className="mt-3 text-sm text-text-muted">{card.description}</p>
-                <Link
-                  href={card.href}
-                  className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-dark"
-                >
-                  {card.label} →
-                </Link>
-              </article>
-            ))}
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              <div className="mb-10 max-w-3xl">
+                <h2>Building Confidence, Hope &amp; Self-Esteem</h2>
+                <p className="mt-3 text-text-muted">
+                  Endeavor&apos;s main focus is the I Am Who program — building
+                  confidence, hope and self-esteem in children with broken hearts.
+                  Each child creates their own life book, answering the question:{" "}
+                  <em>I Am Who?</em>
+                </p>
+              </div>
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+                {programCards.map((card) => (
+                  <article
+                    key={card.title}
+                    className="rounded-xl border border-border bg-white p-6 shadow-sm"
+                  >
+                    <h3 className="font-bold">{card.title}</h3>
+                    <p className="mt-3 text-sm text-text-muted">{card.description}</p>
+                    <Link
+                      href={card.href}
+                      className="mt-4 inline-flex text-sm font-bold text-brand hover:text-brand-dark"
+                    >
+                      {card.label} →
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-6">
+              <ContentImage
+                src={siteImages.iamwhoMission.src}
+                alt={siteImages.iamwhoMission.alt}
+                width={siteImages.iamwhoMission.width}
+                height={siteImages.iamwhoMission.height}
+                className="h-auto w-full rounded-xl border border-border shadow-sm"
+              />
+              <ContentImage
+                src={siteImages.iamwhoBookCover.src}
+                alt={siteImages.iamwhoBookCover.alt}
+                width={siteImages.iamwhoBookCover.width}
+                height={siteImages.iamwhoBookCover.height}
+                className="mx-auto h-auto w-full max-w-[200px] rounded-xl border border-border shadow-sm"
+              />
+            </div>
           </div>
         </div>
       </section>

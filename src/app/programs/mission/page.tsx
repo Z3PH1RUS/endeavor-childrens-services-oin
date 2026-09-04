@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/Hero";
 import { ImpactStats } from "@/components/ImpactStats";
+import { siteImages } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "I Am Who? Mission",
@@ -20,6 +21,7 @@ export default function MissionPage() {
           { label: "Programs", href: "/programs" },
           { label: "Mission" },
         ]}
+        image={siteImages.iamwhoMission}
       />
 
       <section className="py-14 md:py-16">
