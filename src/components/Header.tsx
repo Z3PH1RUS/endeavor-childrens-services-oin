@@ -28,6 +28,65 @@ export function Header() {
     setProgramsOpen(false);
   }, []);
 
+  const getProgramMenuItems = () =>
+    programsRef.current?.querySelectorAll<HTMLElement>('[role="menuitem"]');
+
+  const focusProgramItem = (index: number) => {
+    const items = getProgramMenuItems();
+    if (!items?.length) return;
+    const clamped = ((index % items.length) + items.length) % items.length;
+    items[clamped]?.focus();
+  };
+
+  const handleProgramsButtonKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>,
+  ) => {
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setProgramsOpen(true);
+      focusProgramItem(0);
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      setProgramsOpen(true);
+      const items = getProgramMenuItems();
+      focusProgramItem((items?.length ?? 1) - 1);
+    }
+  };
+
+  const handleProgramMenuKeyDown = (
+    event: React.KeyboardEvent<HTMLAnchorElement>,
+    index: number,
+  ) => {
+    const items = getProgramMenuItems();
+    if (!items?.length) return;
+
+    switch (event.key) {
+      case "ArrowDown":
+        event.preventDefault();
+        focusProgramItem(index + 1);
+        break;
+      case "ArrowUp":
+        event.preventDefault();
+        focusProgramItem(index - 1);
+        break;
+      case "Home":
+        event.preventDefault();
+        focusProgramItem(0);
+        break;
+      case "End":
+        event.preventDefault();
+        focusProgramItem(items.length - 1);
+        break;
+      case "Escape":
+        event.preventDefault();
+        setProgramsOpen(false);
+        document.getElementById(`${programsMenuId}-button`)?.focus();
+        break;
+      default:
+        break;
+    }
+  };
+
   useEffect(() => {
     if (!mobileOpen && !programsOpen) return;
 
@@ -95,7 +154,7 @@ export function Header() {
 
         <button
           type="button"
-          className="rounded-md p-2 text-text lg:hidden"
+          className="rounded-md p-2 text-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent lg:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"
@@ -134,13 +193,14 @@ export function Header() {
               <button
                 type="button"
                 id={`${programsMenuId}-button`}
-                className={`flex w-full items-center justify-between px-3 py-2 text-sm font-semibold transition-colors hover:text-brand lg:w-auto ${
+                className={`flex w-full items-center justify-between px-3 py-2 text-sm font-semibold transition-colors hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent lg:w-auto ${
                   isProgramsActive(pathname) ? "text-brand" : "text-text"
                 }`}
                 aria-expanded={programsOpen}
                 aria-haspopup="true"
                 aria-controls={programsMenuId}
                 onClick={() => setProgramsOpen(!programsOpen)}
+                onKeyDown={handleProgramsButtonKeyDown}
               >
                 Programs
                 <svg
@@ -162,18 +222,21 @@ export function Header() {
                   programsOpen ? "block" : "hidden"
                 } rounded-lg border border-border bg-white py-1 shadow-md lg:absolute lg:left-0 lg:mt-0 lg:min-w-[200px] lg:group-hover:block lg:group-focus-within:block`}
               >
-                {programLinks.map((link) => {
+                {programLinks.map((link, index) => {
                   const active = isActive(pathname, link.href);
                   return (
                     <li key={link.href} role="none">
                       <Link
                         href={link.href}
                         role="menuitem"
-                        className={`block px-4 py-2 text-sm transition-colors hover:bg-brand-light hover:text-brand ${
+                        className={`block px-4 py-2 text-sm transition-colors hover:bg-brand-light hover:text-brand focus-visible:bg-brand-light focus-visible:outline-none ${
                           active ? "font-semibold text-brand" : "text-text"
                         }`}
                         aria-current={active ? "page" : undefined}
                         onClick={closeMobile}
+                        onKeyDown={(event) =>
+                          handleProgramMenuKeyDown(event, index)
+                        }
                       >
                         {link.label}
                       </Link>

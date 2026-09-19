@@ -74,6 +74,7 @@ export function Hero({
               width={image.width}
               height={image.height}
               priority={image.priority}
+              sizes="(max-width: 1280px) 100vw, 1280px"
               className="h-auto w-full"
             />
           </div>
@@ -134,6 +135,7 @@ export function PageHeader({
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="h-auto w-full"
               />
             </div>

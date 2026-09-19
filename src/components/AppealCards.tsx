@@ -19,7 +19,8 @@ export function AppealCards() {
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, 50vw"
+                className="h-full w-full object-cover transition-transform duration-300 motion-reduce:transition-none group-hover:scale-105 motion-reduce:group-hover:scale-100"
               />
             </div>
             <div className="p-6">

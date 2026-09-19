@@ -59,6 +59,7 @@ export default function HomePage() {
               alt={siteImages.childrenProgram.alt}
               width={siteImages.childrenProgram.width}
               height={siteImages.childrenProgram.height}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="h-auto w-full rounded-xl border border-border shadow-sm"
             />
             <ContentImage
@@ -66,6 +67,7 @@ export default function HomePage() {
               alt={siteImages.childrenCommunity.alt}
               width={siteImages.childrenCommunity.width}
               height={siteImages.childrenCommunity.height}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="h-auto w-full rounded-xl border border-border shadow-sm"
             />
           </div>

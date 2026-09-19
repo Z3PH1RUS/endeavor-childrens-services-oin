@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site";
 
 export function TopBar() {
   return (
-    <div className="bg-brand-dark text-white">
+    <div className="bg-brand-dark text-white" role="region" aria-label="Site utilities">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2 text-sm">
         <div className="flex flex-wrap items-center gap-4">
           <a

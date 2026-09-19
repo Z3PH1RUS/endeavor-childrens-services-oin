@@ -19,8 +19,11 @@ export default function ContactPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
 
-      <section className="py-14 md:py-16">
+      <section className="py-14 md:py-16" aria-labelledby="contact-methods-heading">
         <div className="mx-auto max-w-7xl px-4">
+          <h2 id="contact-methods-heading" className="sr-only">
+            Ways to reach us
+          </h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-xl border border-border bg-white p-8 text-center shadow-sm">
               <div
