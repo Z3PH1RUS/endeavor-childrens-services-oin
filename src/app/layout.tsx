@@ -4,7 +4,6 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SkipLink } from "@/components/SkipLink";
 import { TopBar } from "@/components/TopBar";
-import { siteImages } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -28,27 +27,19 @@ export const metadata: Metadata = {
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
-    siteName: siteConfig.name,
-    title: `${siteConfig.name} — Hope for Every Child`,
-    description: siteConfig.description,
-    images: [
+  icons: {
+    icon: [
+      { url: "/images/favicon.ico", sizes: "any" },
+      { url: "/images/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/icon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [
       {
-        url: siteImages.homepageBanner.src,
-        width: siteImages.homepageBanner.width,
-        height: siteImages.homepageBanner.height,
-        alt: siteImages.homepageBanner.alt,
+        url: "/images/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteImages.homepageBanner.src],
   },
   robots: {
     index: true,

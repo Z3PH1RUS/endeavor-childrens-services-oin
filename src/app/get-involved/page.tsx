@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/metadata";
 import { CTABand } from "@/components/CTABand";
 import { ContentImage } from "@/components/ContentImage";
 import { PageHeader } from "@/components/Hero";
@@ -7,11 +7,12 @@ import { QuickDonate } from "@/components/QuickDonate";
 import { siteImages } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Get Involved",
+export const metadata = pageMetadata({
+  title: "How Can You Help?",
   description:
-    "Support Endeavor Children's Services — make a tax-deductible donation to help vulnerable children worldwide.",
-};
+    "Support Endeavor Children's Services with a tax-deductible gift — food, I Am Who? books, supplies, caregiver expenses, and program travel.",
+  path: "/get-involved",
+});
 
 const fundingItems = [
   "Food for hungry children",

@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { CTABand } from "@/components/CTABand";
 import { PageHeader } from "@/components/Hero";
 import { siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contact",
   description:
-    "Contact Endeavor Children's Services — phone and social media.",
-};
+    "Reach Endeavor Children's Services by phone at 360-888-3910 (USA) or connect on Facebook.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

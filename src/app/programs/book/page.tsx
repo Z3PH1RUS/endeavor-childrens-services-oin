@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { ContentImage } from "@/components/ContentImage";
 import { PageHeader } from "@/components/Hero";
 import { StoryCards } from "@/components/StoryCards";
 import { siteImages } from "@/lib/images";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "I Am Who? Book",
   description:
-    "I Am Who? Book — a year of creative activities and a child's memory book to treasure for a lifetime.",
-};
+    "The I Am Who? book guides a year of creative activities — literature, art, music, and reflection — in a life book children keep forever.",
+  path: "/programs/book",
+  imageKey: "iamwhoBookCover",
+});
 
 const beneficiaries = [
   "Children experiencing grief or loss",

@@ -2,6 +2,13 @@ import Link from "next/link";
 import { VariantBadge } from "@/components/VariantBadge";
 import { navLinks, programLinks, siteConfig } from "@/lib/site";
 
+function exploreLinkLabel(href: string, label: string): string {
+  if (href === "/about") return "About Us";
+  if (href === "/board") return "Board of Directors";
+  if (href === "/get-involved") return "How Can You Help?";
+  return label;
+}
+
 export function Footer() {
   const exploreLinks = navLinks.filter(
     (l) => l.href !== "/" && l.href !== "/contact",
@@ -27,10 +34,10 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="/about"
+                  href="/"
                   className="text-white/70 transition-colors hover:text-white"
                 >
-                  About Us
+                  Home
                 </Link>
               </li>
               {exploreLinks.map((link) => (
@@ -39,7 +46,7 @@ export function Footer() {
                     href={link.href}
                     className="text-white/70 transition-colors hover:text-white"
                   >
-                    {link.label === "Board" ? "Board of Directors" : link.label}
+                    {exploreLinkLabel(link.href, link.label)}
                   </Link>
                 </li>
               ))}

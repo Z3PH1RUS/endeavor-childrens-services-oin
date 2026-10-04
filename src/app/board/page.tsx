@@ -1,14 +1,16 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { ContentImage } from "@/components/ContentImage";
 import { PageHeader } from "@/components/Hero";
 import { siteImages } from "@/lib/images";
 import { boardMembers } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Board of Directors",
   description:
-    "Board of Directors — Endeavor Children's Services leadership team.",
-};
+    "Meet the volunteer board of Endeavor Children's Services — Scott Neilson, Carolyn Gilman, and Laurel Shelton.",
+  path: "/board",
+  imageKey: "scottNeilson",
+});
 
 export default function BoardPage() {
   return (

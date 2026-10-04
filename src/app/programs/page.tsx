@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { AppealCards } from "@/components/AppealCards";
 import { CTABand } from "@/components/CTABand";
@@ -8,11 +8,13 @@ import { ImpactStats } from "@/components/ImpactStats";
 import { siteImages } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "I Am Who? Program",
+export const metadata = pageMetadata({
+  title: "I Am Who?",
   description:
-    "I Am Who? — Endeavor Children's Services flagship psycho-social program for vulnerable children.",
-};
+    "I Am Who? — Endeavor's flagship psycho-social program helping vulnerable children build confidence, hope, and self-esteem.",
+  path: "/programs",
+  imageKey: "iamwhoMission",
+});
 
 const programCards = [
   {

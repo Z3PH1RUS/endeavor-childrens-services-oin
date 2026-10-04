@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { CTABand } from "@/components/CTABand";
 import { ContentImage } from "@/components/ContentImage";
@@ -6,11 +6,13 @@ import { PageHeader } from "@/components/Hero";
 import { siteImages } from "@/lib/images";
 import { programActivities } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "I Am Who? Activities",
   description:
-    "I Am Who? Activities — eleven creative modules guiding children through self-discovery and healing.",
-};
+    "Explore eleven I Am Who? activity modules — from My Big Self to My Thoughts Have Wings — for children's self-discovery and healing.",
+  path: "/programs/activities",
+  imageKey: "iamwhoMission",
+});
 
 export default function ActivitiesPage() {
   return (

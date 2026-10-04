@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
 import { CTABand } from "@/components/CTABand";
+import { pageMetadata } from "@/lib/metadata";
 import { ContentImage } from "@/components/ContentImage";
 import { PageHeader } from "@/components/Hero";
 import { siteImages } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About Us",
   description:
-    "About Endeavor Children's Services — our mission, history, and Executive Director Janice Neilson.",
-};
+    "Learn about Endeavor Children's Services — a 501(c)(3) foundation since 2011 — and Executive Director Janice Neilson's work with vulnerable children worldwide.",
+  path: "/about",
+  imageKey: "janiceNeilson",
+});
 
 export default function AboutPage() {
   return (

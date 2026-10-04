@@ -1,14 +1,16 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { PageHeader } from "@/components/Hero";
 import { ImpactStats } from "@/components/ImpactStats";
 import { siteImages } from "@/lib/images";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "I Am Who? Mission",
   description:
-    "I Am Who? Mission — a UNICEF Best Practice therapeutic tool for vulnerable children's emotional well-being.",
-};
+    "I Am Who? invites children into creative activities that support well-being — cited by UNICEF as a Best Practice therapeutic tool.",
+  path: "/programs/mission",
+  imageKey: "iamwhoMission",
+});
 
 export default function MissionPage() {
   return (

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "GITHUB_PAGES=true next build",
+    "postbuild": "node scripts/gh-pages-postexport.mjs",
     "start": "next start",
     "lint": "eslint"
   },

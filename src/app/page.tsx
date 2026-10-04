@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/metadata";
 import { AppealCards } from "@/components/AppealCards";
 import { ContentImage } from "@/components/ContentImage";
 import { CTABand } from "@/components/CTABand";
@@ -9,11 +9,12 @@ import { StoryCards } from "@/components/StoryCards";
 import { siteImages } from "@/lib/images";
 import { impactStats, siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Hope for Every Child",
   description:
-    "Endeavor Children's Services brings hope and opportunity to orphans and vulnerable children around the world through innovative programs including I Am Who?",
-};
+    "Endeavor Children's Services brings hope and opportunity to orphans and vulnerable children worldwide through health, nutrition, education, and the I Am Who? program.",
+  path: "",
+});
 
 export default function HomePage() {
   return (
